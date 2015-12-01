@@ -1,0 +1,9 @@
+{% extends 'partials/base.html.twig' %}
+{% block content %}
+  <article class="box post post-excerpt">
+    <header>
+      <h2>Error {{ page.header.http_response_code }}</h2>
+    </header>
+    {{ page.content }}
+  </article>
+{% endblock %}

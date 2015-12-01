@@ -1,0 +1,28 @@
+{
+    "name": "absalomedia/grav-theme-future",
+    "type": "grav-theme",
+    "description": "Future Imperfect by HTML5 UP, features a clean, minimalistic design, styling for all basic page elements, and HTML5/CSS3 code designed for quick and easy customization.",
+    "keywords": ["theme","grav", "future", "imperfect"],
+    "homepage": "http://www.absalom.biz",
+    "license": "CC BY 3.0",
+    "support": {
+        "issues": "https://github.com/absalomedia/grav-theme-future/issues"
+    },
+    "authors": [
+        {
+            "name": "Lawrence Meckan",
+            "email": "media@absalom.biz",
+            "homepage": "http://www.absalom.biz"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "composer/installers": "~1.0"
+    },
+    "extra": {
+        "installer-name": "striped",
+        "installer-paths": {
+            "user/themes/{$name}/": ["absalomedia/grav-theme-future"]
+        }
+    }
+}

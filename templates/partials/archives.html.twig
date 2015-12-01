@@ -1,0 +1,16 @@
+<section>
+    <ul class="posts">
+    {% for p in page.find('/blog').children.order('date', 'desc').slice(0, 5) %}
+    {% set bannerimage = p.media.images|first %}
+    <li>
+        <article>
+           <header>
+         <h3><a href="{{p.url}}">{{ p.title }}</a></h3>
+        <time class="published" datetime="{{p.date|date("YY-M-D")}}">{{ p.date|date("M j, Y")}}</time>
+        </header>
+        <a href="{{p.url}}" class="image">{{ bannerimage.cropZoom(64,64).quality(60) }}</a>
+       </article>
+    </li>
+   {% endfor %}
+   </ul>
+</section>

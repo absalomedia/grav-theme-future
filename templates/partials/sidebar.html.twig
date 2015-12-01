@@ -1,0 +1,75 @@
+<section id="sidebar">
+
+                        <!-- Intro -->
+                            <section id="intro">
+                                <a href=""{{ base_url_absolute }}"" class="logo"><img src="{{ theme_url }}/images/logo.jpg" alt="{{ site.title|upper }}" /></a>
+                                <header>
+                                    <h2>{{ site.title|upper }}</h2>
+                                    <p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+                                </header>
+                            </section>
+
+                            <section>
+                                <div class="mini-posts">
+
+                                {% for p in page.find('/blog').children.order('hits', 'desc').slice(0, 2) %}
+                                {% set bannerimage = p.media.images|first %}
+                                    <!-- Mini Post -->
+                                        <article class="mini-post">
+                                            <header>
+                                                <h3><a href="{{p.url}}">{{ p.title }}</a></h3>
+                                                <time class="published" datetime="{{p.date|date("YY-M-D")}}">{{ p.date|date("M j, Y")}}</time>
+                                                <a href="{{ page.url }}" class="author"><img src="{{ url('theme://images/avatar.jpg') }}"" alt="{{ page.header.author }}" /></a>
+                                            </header>
+                                            <a href="{{p.url}}" class="image">{{ bannerimage.cropZoom(350,175).quality(60) }}</a>                                       
+                                    </article>
+
+   {% endfor %}
+
+</div>
+</section>
+{% if config.plugins.relatedpages.enabled and related_pages|length > 0 %}
+<section class="box recent-comments">
+    <header>
+        <h2>Related Posts</h2>
+    </header>
+    {% include 'partials/relatedpages.html.twig' %}
+</section>
+{% endif %}
+{% if config.plugins.random.enabled %}
+<section class="box text-style1">
+    <div class="inner">
+        <header>
+            <h2>Random Article</h2>
+        </header>
+        <a href="{{ base_url_relative }}/random"><i class="fa fa-retweet"></i> I'm Feeling Lucky!</a>
+    </div>
+</section>
+{% endif %}
+{% if config.plugins.archives.enabled %}
+        {% include 'partials/archives.html.twig' %}
+{% endif %}
+<!-- About -->
+                            <section class="blurb">
+                                <h2>About</h2>
+                                <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
+                                <ul class="actions">
+                                    <li><a href="#" class="button">Learn More</a></li>
+                                </ul>
+                            </section>
+
+                        <!-- Footer -->
+                            <section id="footer">
+                                <ul class="icons">
+                                    <li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+                                    <li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+                                    <li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+                                    {% if config.plugins.feed.enabled %}
+                                    <li><a href="{{ feed_url }}.rss" class="fa-rss"><span class="label">RSS</span></a></li>
+                                    {% endif %}
+                                    <li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
+                                </ul>
+                                <p class="copyright">&copy; {{ "now"|date("Y") }} {{ site.author.name }}. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+                            </section>
+
+                    </section>

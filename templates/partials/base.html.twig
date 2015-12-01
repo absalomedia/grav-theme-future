@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    {% block head %}
+        <meta charset="utf-8" />
+        <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
+        {% include 'partials/metadata.html.twig' %}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
+
+        {% block stylesheets %}
+            {% do assets.addCss('theme://assets/css/main.css') %}
+        {% endblock %}
+        {{ assets.css() }}
+
+        {% block javascripts %}
+            {% do assets.add('jquery',101) %}
+            {% do assets.addJs('theme://assets/js/skel.min.js') %}
+            {% do assets.addJs('theme://assets/js/util.js') %}
+            {% do assets.addJs('theme://assets/js/main.js') %}
+        {% endblock %}
+        {{ assets.js() }}
+
+        <!--[if lte IE 8]><script src="{{ url('theme://assets/js/ie/html5shiv.js') }}"></script><![endif]-->
+
+        {% if site.calendar %}
+           <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+       {% endif %}
+
+       <!--[if lte IE 8]><script src="{{ url('theme://assets/js/ie/respond.min.js') }}"></script><![endif]-->
+       <!--[if lte IE 8]><script src="{{ url('theme://assets/css/ie8.css') }}"></script><![endif]-->
+
+       {% if site.calendar %}
+        <script type="text/javascript">
+        $(function() {
+            $( "#datepicker" ).datepicker({
+                hideIfNoPrevNext: true
+            });
+        });
+        </script>
+    {% endif %}
+
+    {% endblock head%}
+</head>
+
+<body class="{{ site.sidebar_position }}-sidebar">
+    <div id="wrapper">
+            <header id="header">
+              <h1><a href="{{ site.url }}">{{ site.title }}</a></h1>
+                  {% include 'partials/navigation.html.twig' %}
+                  <nav class="main">
+                            <ul>
+                                <li class="search">
+                                    <a class="fa-search" href="#search">Search</a>
+                                    <form id="search" method="get" action="#">
+                                        <input type="text" name="query" placeholder="Search" />
+                                    </form>
+                                </li>
+                                <li class="menu">
+                                    <a class="fa-bars" href="#menu">Menu</a>
+                                </li>
+                            </ul>
+                        </nav>
+            </header>
+        {% block body %}
+
+            <div id="content">
+                <div class="inner">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        {% endblock %}
+        {% block sidebar %}
+            {% include 'partials/sidebar.html.twig' %}
+        {% endblock %}
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+{% extends 'partials/base.html.twig' %}
+{% block content %}
+<article class="box post post-excerpt">
+  <header>
+    <h2>{{ page.header.title }}</h2>
+  </header>
+   {{ page.content }}
+</article>
+{% endblock %}
