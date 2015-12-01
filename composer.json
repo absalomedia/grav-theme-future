@@ -20,7 +20,7 @@
         "composer/installers": "~1.0"
     },
     "extra": {
-        "installer-name": "striped",
+        "installer-name": "future",
         "installer-paths": {
             "user/themes/{$name}/": ["absalomedia/grav-theme-future"]
         }
