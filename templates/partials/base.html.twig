@@ -46,19 +46,16 @@
     {% endblock head%}
 </head>
 
-<body class="{{ site.sidebar_position }}-sidebar">
+<body>
     <div id="wrapper">
             <header id="header">
               <h1><a href="{{ site.url }}">{{ site.title }}</a></h1>
                   {% include 'partials/navigation.html.twig' %}
                   <nav class="main">
                             <ul>
-                                <li class="search">
-                                    <a class="fa-search" href="#search">Search</a>
-                                    <form id="search" method="get" action="#">
-                                        <input type="text" name="query" placeholder="Search" />
-                                    </form>
-                                </li>
+                                {% if config.plugins.simplesearch.enabled %}
+                                {% include 'partials/simplesearch_searchbox.html.twig' %}
+                                {% endif %}
                                 <li class="menu">
                                     <a class="fa-bars" href="#menu">Menu</a>
                                 </li>
@@ -80,5 +77,19 @@
 
     </div>
 
+{% if config.plugins.simplesearch.enabled %}
+<script type="text/javascript">
+$(document).ready(function($){
+    var input = $('[data-search-input]');
+
+    input.on('keypress', function(event) {
+        if (event.which == 13 && input.val().length > 3) {
+            event.preventDefault();
+            window.location.href = input.data('search-input') + '{{ config.system.param_sep }}' + input.val();
+        }
+    });
+});
+</script>
+{% endif %}
 </body>
 </html>

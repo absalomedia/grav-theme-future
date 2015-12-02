@@ -2,7 +2,7 @@
 
 ![Future](screenshot.jpg)
 
-Future Imperfect by [HTML5UP](http://www.html5up.net), features a clean, minimalistic design, styling for all basic page elements, a repositionable sidebar (left or right), and HTML5/CSS3 code designed for quick and easy customization.
+Future Imperfect by [HTML5UP](http://www.html5up.net), features a clean, minimalistic design, styling for all basic page elements and HTML5/CSS3 code designed for quick and easy customization.
 
 # Features
 

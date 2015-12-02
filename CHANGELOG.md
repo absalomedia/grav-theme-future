@@ -1,3 +1,12 @@
+# v1.0.2
+## 12/03/2015
+
+1. [](#improved)
+    * More form design improvements
+    * Documentation
+2. [](#new)
+    * Coverage for SimpleSearch
+
 # v1.0.1
 ## 12/02/2015
 

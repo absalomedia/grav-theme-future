@@ -1,9 +1,13 @@
 {% extends 'partials/base.html.twig' %}
 {% block content %}
 <article class="box post post-excerpt">
-  <header>
-    <h2>{{ form.message }}</h2>
-  </header>
+  	<div class="title">
+    <h2>{{ form.message }}</h2>	
+	</div>
+    <div class="meta">
+    <time class="published" datetime="{{form.date|date("Y-m-d")}}">{{ form.date|date("M j, Y")}}</time>                              
+    </div>
+   </header>
   <p>Here is the summary of what you wrote to us:</p>
 
   {{ content }}

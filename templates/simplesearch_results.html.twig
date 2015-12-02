@@ -1,0 +1,21 @@
+{% extends 'partials/simplesearch_base.html.twig' %}
+
+{% block content %}
+<article class="box post post-excerpt simplesearch">
+    <header>
+    <div class="title">
+            <h2>Search Results</h2>
+            {% include 'partials/simplesearch_searchbox.html.twig' %}
+        
+    </div>
+             <div class="meta">
+                                      <span class="published" >Found {{ search_results.count }} {{ 'result'|pluralize(search_results.count) }}</span>
+                                       <a class="fa-search author"> <span class="name">Search: {{ query }}</span></a>
+            </div>
+    </header>
+       {% for page in search_results %}
+        {% include 'partials/simplesearch_item.html.twig' with {'page':page} %}
+    {% endfor %}
+</article>
+ 
+{% endblock %}
