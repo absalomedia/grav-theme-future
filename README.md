@@ -9,8 +9,8 @@ Future Imperfect by [HTML5UP](http://www.html5up.net), features a clean, minimal
 * HTML5 and CSS3
 * Fully Responsive
 * Various templates for presenting your content
-* Repositionable sidebar (left or right),
-* Calendar with actual date (post date for blog items)
+* Randomised page content in sidebar
+* Top content pages in sidebar
 * Styling for all basic page elements
 * Styling for various modules
 * Cross browser compatible
