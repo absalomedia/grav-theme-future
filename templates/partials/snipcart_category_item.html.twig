@@ -1,0 +1,10 @@
+{% set snipcart_image = page.media.images|first %}
+                                        <article class="4u$ mini-post">
+                                            <header>
+                                                <h3><a href="{{ page.url }}">{{ page.header.category }}</a></h3>
+                                                <time class="published" datetime="{{p.date|date("Y-m-d")}}">{{ p.date|date("M j, Y")}}</time>
+                                            </header>
+                                            {% if snipcart_image %}
+                                            <a href="{{page.url}}" class="image fit">{{ snipcart_image.cropResize(300,300).html(page.header.category,'snipcart-thumb-image') }}</a>
+                                            {% endif %}                                       
+                                        </article>
