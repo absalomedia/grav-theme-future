@@ -57,7 +57,7 @@ This command will check your Grav install to see if your Future theme is due for
 Manually updating Future is pretty simple. Here is what you will need to do to get this done:
 
 * Delete the `your/site/user/themes/future` directory.
-* Download the new version of the Future theme from either [GitHub](https://github.com/getgrav/grav-theme-future) or [GetGrav.org](http://getgrav.org/downloads/themes).
+* Download the new version of the Future theme from either [GitHub](https://github.com/absalomedia/grav-theme-future) or [GetGrav.org](http://getgrav.org/downloads/themes).
 * Unzip the zip file in `your/site/user/themes` and rename the resulting folder to `future`.
 * Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in terminal and typing `bin/grav clear-cache`.
 

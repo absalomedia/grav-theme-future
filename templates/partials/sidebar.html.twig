@@ -18,7 +18,7 @@
                                         <article class="mini-post">
                                             <header>
                                                 <h3><a href="{{p.url}}">{{ p.title }}</a></h3>
-                                                <time class="published" datetime="{{p.date|date("YY-M-D")}}">{{ p.date|date("M j, Y")}}</time>
+                                                <time class="published" datetime="{{p.date|date("Y-m-d")}}">{{ p.date|date("M j, Y")}}</time>
                                                 <a href="{{ page.url }}" class="author"><img src="{{ url('theme://images/avatar.jpg') }}"" alt="{{ page.header.author }}" /></a>
                                             </header>
                                             <a href="{{p.url}}" class="image">{{ bannerimage.cropZoom(350,175).quality(60) }}</a>                                       
@@ -28,27 +28,31 @@
 
 </div>
 </section>
-{% if config.plugins.relatedpages.enabled and related_pages|length > 0 %}
-<section class="box recent-comments">
-    <header>
-        <h2>Related Posts</h2>
-    </header>
-    {% include 'partials/relatedpages.html.twig' %}
-</section>
-{% endif %}
-{% if config.plugins.random.enabled %}
-<section class="box text-style1">
-    <div class="inner">
-        <header>
-            <h2>Random Article</h2>
-        </header>
-        <a href="{{ base_url_relative }}/random"><i class="fa fa-retweet"></i> I'm Feeling Lucky!</a>
-    </div>
-</section>
-{% endif %}
 {% if config.plugins.archives.enabled %}
         {% include 'partials/archives.html.twig' %}
 {% endif %}
+{% if config.plugins.relatedpages.enabled and related_pages|length > 0 %}
+    {% include 'partials/relatedpages.html.twig' %}
+{% endif %}
+{% if config.plugins.random.enabled %}
+<section>
+    <ul class="posts">
+    {% for p in page.find('/blog').children.order('random').slice(0, 1) %}
+    {% set bannerimage = p.media.images|first %}
+    <li>
+        <article>
+           <header>
+         <h3><a href="{{p.url}}">{{ p.title }}</a></h3>
+        <time class="published" datetime="{{p.date|date("Y-m-d")}}">{{ p.date|date("M j, Y")}}</time>
+        </header>
+        <a href="{{p.url}}" class="image">{{ bannerimage.cropZoom(64,64).quality(60) }}</a>
+       </article>
+    </li>
+   {% endfor %}
+   </ul>
+</section>
+{% endif %}
+
 <!-- About -->
                             <section class="blurb">
                                 <h2>About</h2>

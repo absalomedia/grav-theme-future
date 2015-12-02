@@ -33,23 +33,10 @@
         {% endif %}
     </div>
              <div class="meta">
-                                        <time class="published" datetime="{{page.date|date("YY-M-D")}}">{{ page.date|date("M j, Y")}}</time>
-                                        <a href="{{ page.url }}" class="author"><span class="name">{{ page.header.author }}</span><img src="{{ url('theme://images/avatar.jpg') }}"" alt="{{ page.header.author }}" /></a>
+                                        <time class="published" datetime="{{page.date|date("Y-m-d")}}">{{ page.date|date("M j, Y")}}</time>
+                                        <a href="{{ page.url }}" class="author"><span class="name">{{ page.header.author }}</span><img src="{{ url('theme://images/avatar.jpg') }}" alt="{{ page.header.author }}" /></a>
             </div>
     </header>
-
-    <div class="info">
-            {% if site.share.facebook or site.share.twitter %}
-            <ul class="stats">
-                {% if site.share.twitter %}
-                <li><a href="https://twitter.com/share" data-url="{{ page.url(true) }}" data-text="{{ page.title }}" class="icon fa-twitter"><span id="so-url-shares{{ loop.index }}"><i class="fa fa-circle-o-notch fa-spin"></i></span></a></li>
-                {% endif %}
-                {% if site.share.facebook %}
-                <li><a href="http://www.facebook.com/sharer.php?u={{ page.url(true) }}" class="icon fa-facebook"><span id="so-fburl-shares{{ loop.index }}">0</span></a></li>
-                {% endif %}
-            </ul>
-            {% endif %}
-        </div>
 
         {% if big_header %}
             {{ page.media.images|first.cropResize(1038,437).html(page.title, page.title, 'image featured') }}
@@ -57,9 +44,7 @@
             {{ page.media.images|first.cropZoom(1038,437).html(page.title, page.title, 'image featured') }}
         {% endif %}
 
-       
-
-        
+         
  
     {% if page.header.continue_link is sameas(false) %}
         <p>{{ page.content }}</p>
@@ -100,7 +85,8 @@
                                         <li><a href="{{ base_url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a></li>
                                                  {% endfor %}
                                             {% endif %}
-                                        <li><a href="https://twitter.com/share" data-url="{{ page.url(true) }}" data-text="{{ page.title }}" class="icon fa-heart"><span id="so-url-shares{{ loop.index }}"><i class="fa fa-circle-o-notch fa-spin"></i></span></a></li>
+                                        <li><a href="https://twitter.com/share" data-url="{{ page.url(true) }}" data-text="{{ page.title }}" class="icon fa-heart">
+                                            <span id="so-url-shares{{ loop.index }}"><i class="fa fa-circle-o-notch fa-spin"></i></span></a></li>
                                         <li><a href="http://www.facebook.com/sharer.php?u={{ page.url(true) }}" class="icon fa-comment"><span id="so-fburl-shares{{ loop.index }}">0</span></a></li>
                                     </ul>
                                 </footer>

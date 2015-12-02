@@ -6,7 +6,7 @@
         <article>
            <header>
          <h3><a href="{{p.url}}">{{ p.title }}</a></h3>
-        <time class="published" datetime="{{p.date|date("YY-M-D")}}">{{ p.date|date("M j, Y")}}</time>
+        <time class="published" datetime="{{p.date|date("Y-m-d")}}">{{ p.date|date("M j, Y")}}</time>
         </header>
         <a href="{{p.url}}" class="image">{{ bannerimage.cropZoom(64,64).quality(60) }}</a>
        </article>

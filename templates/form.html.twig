@@ -2,8 +2,12 @@
 {% block content %}
 <article class="box post post-excerpt">
   <header>
-    <h2>{{ page.header.title }}</h2>
-  </header>
+  	<div class="title">
+    <h2>{{ page.header.title }}</h2>	
+	</div>
+    <div class="meta">                            
+    </div>
+    </header>
   {{ content }}
   {% include "forms/form.html.twig" %}
 </article>
