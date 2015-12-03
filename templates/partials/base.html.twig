@@ -53,6 +53,10 @@
                   {% include 'partials/navigation.html.twig' %}
                   <nav class="main">
                             <ul>
+                                {% block header_extra %}{% endblock %}
+                                {% if config.plugins.langswitcher.enabled %}
+                                {% include 'partials/langswitcher.html.twig' %}
+                                {% endif %}
                                 {% if config.plugins.simplesearch.enabled %}
                                 {% include 'partials/simplesearch_searchbox.html.twig' %}
                                 {% endif %}

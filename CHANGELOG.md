@@ -1,3 +1,12 @@
+# v1.0.3
+## 12/04/2015
+
+1. [](#improved)
+    * Coverage for header_extra
+    * Coverage for Language Switcher
+2. [](#bugfix)
+    * Aspect ratios on screenshot & thumbnail
+
 # v1.0.2
 ## 12/03/2015
 
