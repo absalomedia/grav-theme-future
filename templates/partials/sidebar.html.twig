@@ -2,7 +2,7 @@
 
                         <!-- Intro -->
                             <section id="intro">
-                                <a href=""{{ base_url_absolute }}"" class="logo"><img src="{{ theme_url }}/images/logo.jpg" alt="{{ site.title|upper }}" /></a>
+                                <a href="{{ base_url_absolute }}" class="logo"><img src="{{ theme_url }}/images/logo.jpg" alt="{{ site.title|upper }}" /></a>
                                 <header>
                                     <h2>{{ site.title|upper }}</h2>
                                     <p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
@@ -19,7 +19,7 @@
                                             <header>
                                                 <h3><a href="{{p.url}}">{{ p.title }}</a></h3>
                                                 <time class="published" datetime="{{p.date|date("Y-m-d")}}">{{ p.date|date("M j, Y")}}</time>
-                                                <a href="{{ page.url }}" class="author"><img src="{{ url('theme://images/avatar.jpg') }}"" alt="{{ page.header.author }}" /></a>
+                                                <a href="{{ page.url }}" class="author"><img src="{{ url('theme://images/avatar.jpg') }}" alt="{{ page.header.author }}" /></a>
                                             </header>
                                             <a href="{{p.url}}" class="image">{{ bannerimage.cropZoom(350,175).quality(60) }}</a>                                       
                                     </article>
