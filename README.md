@@ -8,6 +8,8 @@ Future Imperfect by [HTML5UP](http://www.html5up.net), features a clean, minimal
 
 * HTML5 and CSS3
 * Fully Responsive
+* Microdata for blogs
+* ARIA accessibility conformance
 * Various templates for presenting your content
 * Randomised page content in sidebar
 * Top content pages in sidebar
