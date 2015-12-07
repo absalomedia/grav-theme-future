@@ -1,3 +1,10 @@
+# v1.0.4
+## 12/07/2015
+
+1. [](#new)
+    * Start of microdata coverage
+    * Start of ARIA coverage
+
 # v1.0.3
 ## 12/04/2015
 
