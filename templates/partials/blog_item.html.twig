@@ -1,4 +1,4 @@
-<article class="box post post-excerpt">
+<article class="box post post-excerpt"  itemprop="liveBlogUpdate" itemscope itemtype="http://schema.org/BlogPosting">
 
 
 
@@ -19,22 +19,22 @@
     <header>
     <div class="title">
         {% if page.header.link %}
-            <h2>
+            <h2 itemprop="headline">
                 {% if page.header.continue_link is not sameas(false) %}
                     <a href="{{ page.url }}"></a>
                 {% endif %}
                 <a href="{{ page.header.link }}">{{ page.title }}</a>
             </h2>
             {% else %}
-            <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
+            <h2 itemprop="headline"><a href="{{ page.url }}">{{ page.title }}</a></h2>
         {% endif %}
         {% if page.header.description %}
-        <p>{{ page.header.description }}</p>
+        <p itemprop="alternativeHeadline">{{ page.header.description }}</p>
         {% endif %}
     </div>
              <div class="meta">
-                                        <time class="published" datetime="{{page.date|date("Y-m-d")}}">{{ page.date|date("M j, Y")}}</time>
-                                        <a href="{{ page.url }}" class="author"><span class="name">{{ page.header.author }}</span><img src="{{ url('theme://images/avatar.jpg') }}" alt="{{ page.header.author }}" /></a>
+                                        <time class="published" itemprop="datePublished" datetime="{{page.date|date("Y-m-d")}}">{{ page.date|date("M j, Y")}}</time>
+                                        <a href="{{ page.url }}" class="author"><span class="name" rel="author">{{ page.header.author }}</span><img src="{{ url('theme://images/avatar.jpg') }}" alt="{{ page.header.author }}" /></a>
             </div>
     </header>
 
@@ -52,11 +52,11 @@
         {% set show_prev_next = true %}
         {% endif %}
     {% elseif truncate and page.summary != page.content %}
-        <p>{{ page.summary }}</p>
+        <p itemprop="articleBody">{{ page.summary }}</p>
     {% elseif truncate %}
-        <p>{{ page.content|truncate(550) }}</p>
+        <p itemprop="articleBody">{{ page.content|truncate(550) }}</p>
     {% else %}
-        <p>{{ page.content }}</p>
+        <p itemprop="articleBody">{{ page.content }}</p>
         {% set show_prev_next = true %}
     {% endif %}
 
@@ -82,7 +82,7 @@
                                     <ul class="stats">
                                             {% if page.taxonomy.tag %}
                                                 {% for tag in page.taxonomy.tag %}
-                                        <li><a href="{{ base_url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a></li>
+                                        <li><a href="{{ base_url }}/tag{{ config.system.param_sep }}{{ tag }}" itemprop="keywords">{{ tag }}</a></li>
                                                  {% endfor %}
                                             {% endif %}
                                         <li><a href="https://twitter.com/share" data-url="{{ page.url(true) }}" data-text="{{ page.title }}" class="icon fa-heart">

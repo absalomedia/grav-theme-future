@@ -1,7 +1,7 @@
 <section id="sidebar">
 
                         <!-- Intro -->
-                            <section id="intro">
+                            <section id="intro" role="banner">
                                 <a href="{{ base_url_absolute }}" class="logo"><img src="{{ theme_url }}/images/logo.jpg" alt="{{ site.title|upper }}" /></a>
                                 <header>
                                     <h2>{{ site.title|upper }}</h2>
@@ -9,7 +9,7 @@
                                 </header>
                             </section>
 
-                            <section>
+                            <section role="complementary">
                                 <div class="mini-posts">
 
                                 {% for p in page.find('/blog').children.order('hits', 'desc').slice(0, 2) %}
@@ -35,7 +35,7 @@
     {% include 'partials/relatedpages.html.twig' %}
 {% endif %}
 {% if config.plugins.random.enabled %}
-<section>
+<section role="complementary">
     <ul class="posts">
     {% for p in page.find('/blog').children.order('random').slice(0, 1) %}
     {% set bannerimage = p.media.images|first %}
@@ -54,7 +54,7 @@
 {% endif %}
 
 <!-- About -->
-                            <section class="blurb">
+                            <section class="blurb" role="complementary">
                                 <h2>About</h2>
                                 <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
                                 <ul class="actions">
@@ -63,7 +63,7 @@
                             </section>
 
                         <!-- Footer -->
-                            <section id="footer">
+                            <section id="footer" role="contentinfo">
                                 <ul class="icons">
                                     <li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
                                     <li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
