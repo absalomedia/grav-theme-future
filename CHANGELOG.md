@@ -1,3 +1,10 @@
+# v1.0.5
+## 01/27/2016
+
+1.  [](#bugfix)
+    * Canonical resolution
+    * Removal of composer.json & unneeded streams
+
 # v1.0.4
 ## 12/07/2015
 
