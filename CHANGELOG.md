@@ -1,3 +1,11 @@
+# v1.0.6
+## 02/04/2016
+
+1. [](#improved)
+    * Block management - including JS assets at end of page
+2.  [](#bugfix)
+    * ArticleBody redesign (issue #4)
+
 # v1.0.5
 ## 01/27/2016
 
