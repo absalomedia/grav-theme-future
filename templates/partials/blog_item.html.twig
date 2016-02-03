@@ -45,21 +45,23 @@
         {% endif %}
 
          
+    <div itemprop="articleBody">
  
     {% if page.header.continue_link is sameas(false) %}
-        <p>{{ page.content }}</p>
+        {{ page.content }}
         {% if not truncate %}
         {% set show_prev_next = true %}
         {% endif %}
     {% elseif truncate and page.summary != page.content %}
-        <p itemprop="articleBody">{{ page.summary }}</p>
+        {{ page.summary }}
     {% elseif truncate %}
-        <p itemprop="articleBody">{{ page.content|truncate(550) }}</p>
+        {{ page.content|truncate(550) }}
     {% else %}
-        <p itemprop="articleBody">{{ page.content }}</p>
+        {{ page.content }}
         {% set show_prev_next = true %}
     {% endif %}
 
+   </div>
 
     <footer>
     <ul class="actions">
