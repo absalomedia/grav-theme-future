@@ -16,13 +16,18 @@ Future Imperfect by [HTML5UP](http://www.html5up.net), features a clean, minimal
 * Styling for all basic page elements
 * Styling for various modules
 * Cross browser compatible
+* Dynamic avatar images based on author
 * Sharing buttons for Facebook and Twitter with share count.
 
 # Installation
 
 Installing the Future theme can be done in one of two ways. Our GPM (Grav Package Manager) installation method enables you to quickly and easily install the theme with a simple terminal command, while the manual method enables you to do so via a zip file.
 
-The theme by itself is useful, but you may have an easier time getting up and running by installing a skeleton. A skeleton is being developed in due course.
+The theme by itself is useful, but you may have an easier time getting up and running by installing a skeleton.
+
+# Dynamic avatars
+
+Dynamic avatar images for each author must be placed inside the `/your/site/grav/user/themes/future/images` directory as JPG. Each avatar image should be a lowercase version of the author. i.e. Fred Bloggs becomes fred-bloggs.jpg
 
 ## GPM Installation (Preferred)
 

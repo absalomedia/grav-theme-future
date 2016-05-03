@@ -1,3 +1,11 @@
+# v1.0.7
+## 04/05/2016
+
+1. [](#improved)
+    * Dynamic avatar images 
+2.  [](#bugfix)
+    * Author taxonomy - now inherits from sitewide if not specified on page
+
 # v1.0.6
 ## 02/04/2016
 

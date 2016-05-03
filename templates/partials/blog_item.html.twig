@@ -1,7 +1,12 @@
 <article class="box post post-excerpt"  itemprop="liveBlogUpdate" itemscope itemtype="http://schema.org/BlogPosting">
-
-
-
+         {% if page.header.author %}
+         {% set author =  page.header.author %}
+         {% else %}
+         {% set author =  page.header.taxonomy.author[0] %}
+         {% endif %}
+         {% if author %}
+         {% set avatar = author|replace(' ', '-')|lower %}
+         {% endif %}
     {% if site.share.facebook or site.share.twitter %}
     <script type="text/javascript">
     {% if site.share.twitter %}
@@ -34,7 +39,9 @@
     </div>
              <div class="meta">
                                         <time class="published" itemprop="datePublished" datetime="{{page.date|date("Y-m-d")}}">{{ page.date|date("M j, Y")}}</time>
-                                        <a href="{{ page.url }}" class="author"><span class="name" rel="author">{{ page.header.author }}</span><img src="{{ url('theme://images/avatar.jpg') }}" alt="{{ page.header.author }}" /></a>
+                                        {% if author %}
+                                        <a href="{{ page.url }}" class="author"><span class="name" rel="author">{{ author }}</span><img src="{{ theme_url }}/images/{{avatar}}.jpg" alt="{{ author }}" /></a>
+                                        {% endif %}
             </div>
     </header>
 

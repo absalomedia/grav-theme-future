@@ -14,12 +14,23 @@
 
                                 {% for p in page.find('/blog').children.order('hits', 'desc').slice(0, 2) %}
                                 {% set bannerimage = p.media.images|first %}
+                                    {% if p.header.author %}
+                                    {% set pauthor =  p.header.author %}
+                                    {% else %}
+                                    {% set pauthor =  p.header.taxonomy.author[0] %}
+                                    {% endif %}
+                                    {% if pauthor %}
+                                    {% set pavatar = p.author|replace(' ', '-')|lower %}
+                                    {% endif %}
+
                                     <!-- Mini Post -->
                                         <article class="mini-post">
                                             <header>
                                                 <h3><a href="{{p.url}}">{{ p.title }}</a></h3>
                                                 <time class="published" datetime="{{p.date|date("Y-m-d")}}">{{ p.date|date("M j, Y")}}</time>
-                                                <a href="{{ page.url }}" class="author"><img src="{{ url('theme://images/avatar.jpg') }}" alt="{{ page.header.author }}" /></a>
+                                                {% if pauthor %}
+                                                <a href="{{ page.url }}" class="author"><img src="{{ theme_url }}/images/{{pavatar}}.jpg" alt="{{ pauthor }}" /></a>
+                                                {% endif %}
                                             </header>
                                             <a href="{{p.url}}" class="image">{{ bannerimage.cropZoom(350,175).quality(60) }}</a>                                       
                                     </article>
