@@ -1,3 +1,9 @@
+# v1.0.8
+## 02/27/2020
+ 
+1.  [](#bugfix)
+    * Drop down menu functionality from HTML5UP
+
 # v1.0.7
 ## 04/05/2016
 
