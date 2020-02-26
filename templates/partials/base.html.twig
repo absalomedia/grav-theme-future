@@ -68,6 +68,31 @@
                                 </li>
                             </ul>
                         </nav>
+			<section id="menu">
+  			  <!-- Links -->
+			    <section>
+			      <ul class="links">
+			        {% for page in pages.children %}
+     				  {% if page.visible %}
+    				    {% set current_page = (page.active or page.activeChild) ? 'current' : '' %}
+              			    <li>
+                      		      <a href="{{ page.url }}">
+                          		<h3>{{ page.menu }}</h3>
+                      		      </a>
+                  		    </li>
+          			  {% endif %}
+      				{% endfor %}
+      				{# CUSTOM MENU ITEMS #}
+      				{% for mitem in site.menu %}
+          			  <li>
+              			    <a href="{{ mitem.link }}">
+                		      <h3>{{ mitem.text }}</h3>
+              			    </a>
+          			  </li>
+      				{% endfor %}
+      			      </ul>
+    			    </section>
+			  </section>
             </header>
         {% endblock %}
         {% block body %}
