@@ -4,6 +4,6 @@
     <header>
       <h2>Error {{ page.header.http_response_code }}</h2>
     </header>
-    {{ page.content }}
+    {{ page.content|raw }}
   </article>
 {% endblock %}
