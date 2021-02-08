@@ -2,3 +2,4 @@ enabled: true
 color: blue
 dropdown:
   enabled: false
+site_subtitle: ""
