@@ -91,10 +91,10 @@
 
     {% if show_prev_next %}
            {% if not page.isFirst %}
-                <li><a class="button" href="{{ page.nextSibling.url }}"><i class="fa fa-chevron-left"></i> {{ "THEME_FUTURE.btn_next"|t|e }} {{ "THEME_FUTURE.content_type_post"|t|e }}</a></li>
+                <li><a class="button" href="{{ page.nextSibling.url }}"><i class="fa fa-chevron-left"></i> {{ "THEME_FUTURE.btn_item_next"|t|e }}</a></li>
             {% endif %}
             {% if not page.isLast %}
-                <li><a class="button" href="{{ page.prevSibling.url }}">{{ "THEME_FUTURE.btn_previous"|t|e }} {{ "THEME_FUTURE.content_type_post"|t|e }} <i class="fa fa-chevron-right"></i></a></li> 
+                <li><a class="button" href="{{ page.prevSibling.url }}">{{ "THEME_FUTURE.btn_item_previous"|t|e }} <i class="fa fa-chevron-right"></i></a></li> 
             {% endif %}
     {% endif %}
     </ul>
