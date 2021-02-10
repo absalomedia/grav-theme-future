@@ -41,10 +41,12 @@
        <time class="published" itemprop="datePublished" datetime="{{ page.date|date("Y-m-d") }}">
        {% switch grav.language.getLanguage %}
        {% case 'de' %}
-         {{ page.date|date("j") }}. {{ 'THEME_FUTURE.month_short'|ta(page.date|date("n") - 1)|e }}. {{ page.date|date("Y") }}
+         {{ page.date|date("j.") }} {{ 'THEME_FUTURE.month_short'|ta(page.date|date("n") - 1)|e }} {{ page.date|date("Y") }}
+       {% case 'fr' %}
+         {{ page.date|date("j") }} {{ 'THEME_FUTURE.month_short'|ta(page.date|date("n") - 1)|e }} {{ page.date|date("Y") }}
        {% case 'en' %}
        {% default %}
-         {{ 'THEME_FUTURE.month_short'|ta(page.date|date("n") - 1)|e }} {{ page.date|date("j") }}, {{ page.date|date("Y") }}
+         {{ 'THEME_FUTURE.month_short'|ta(page.date|date("n") - 1)|e }} {{ page.date|date("j,") }} {{ page.date|date("Y") }}
        {% endswitch %}
        </time>
 
