@@ -4,9 +4,11 @@ en:
     btn_previous: Previous
     btn_next: Next
     content_type_post: Post
+    month_short: [Jan, Feb, Mar, Apr, May, June, July, Aug, Sept, Oct, Nov, Dec]
 de:
   THEME_FUTURE:
     btn_continue_reading: Weiterlesen
     btn_previous: Vorheriger
     btn_next: Nächster
     content_type_post: Artikel
+    month_short: [Jan, Feb, März, April, Mai, Juni, Juli, Aug, Sept, Okt, Nov, Dez]
