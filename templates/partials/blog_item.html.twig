@@ -1,4 +1,3 @@
-{% set activeLanguage = grav.language.getActive() %}
 <article class="box post post-excerpt"  itemprop="liveBlogUpdate" itemscope itemtype="http://schema.org/BlogPosting">
          {% if page.header.author %}
          {% set author =  page.header.author %}
@@ -40,7 +39,7 @@
     </div>
      <div class="meta">
        <time class="published" itemprop="datePublished" datetime="{{ page.date|date("Y-m-d") }}">
-       {% switch activeLanguage %}
+       {% switch '~grav.language.getActive~' %}
        {% case 'de' %}
          {{ page.date|date("j. M. Y") }}
        {% case 'en' %}
