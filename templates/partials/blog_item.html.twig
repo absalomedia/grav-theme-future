@@ -39,12 +39,13 @@
     </div>
      <div class="meta">
        <time class="published" itemprop="datePublished" datetime="{{ page.date|date("Y-m-d") }}">
-       {% switch '~grav.language.getActive~' %}
+       {% switch grav.language.getLanguage %}
        {% case 'de' %}
          {{ page.date|date("j. M. Y") }}
        {% case 'en' %}
        {% default %}
          {{ page.date|date("M j, Y") }}
+         {{ grav.language.getLanguage }}
        {% endswitch %}
        </time>
 
