@@ -73,9 +73,9 @@
     <footer>
     <ul class="actions">
     {% if truncate and page.summary != page.content %}
-        <li><a href="{{ page.url }}" class="button">Continue Reading</a></li>
+        <li><a href="{{ page.url }}" class="button">{{ "THEME_FUTURE.btn_continue_reading"|t|e }}</a></li>
     {% elseif truncate %}
-        <li><a href="{{ page.url }}" class="button">Continue Reading</a></li>
+        <li><a href="{{ page.url }}" class="button">{{ "THEME_FUTURE.btn_continue_reading"|t|e }}</a></li>
     {% endif %}
 
     {% if show_prev_next %}
