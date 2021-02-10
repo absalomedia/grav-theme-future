@@ -1,6 +1,12 @@
 en:
   THEME_FUTURE:
     btn_continue_reading: Continue Reading
+    btn_previous: Previous
+    btn_next: Next
+    content_type_post: Post
 de:
   THEME_FUTURE:
     btn_continue_reading: Weiterlesen
+    btn_previous: Vorheriger
+    btn_next: Nächster
+    content_type_post: Artikel
