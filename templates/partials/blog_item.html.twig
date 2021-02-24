@@ -1,13 +1,15 @@
+{% if config.plugins.aura-authors.enabled %}
+ {% set THEME_FUTURE_AUTHOR_STANDARDMODE = false %}
+{% elseif page.header.author %}
+ {% set THEME_FUTURE_AUTHOR_STANDARDMODE = true %}
+ {% set author = page.header.author %}
+{% else %}
+ {% set THEME_FUTURE_AUTHOR_STANDARDMODE = true %}
+ {% set author = page.header.taxonomy.author[0] %}
+{% endif %}
+
 <article class="box post post-excerpt"  itemprop="liveBlogUpdate" itemscope itemtype="http://schema.org/BlogPosting">
-         {% if page.header.author %}
-         {% set author =  page.header.author %}
-         {% else %}
-         {% set author =  page.header.taxonomy.author[0] %}
-         {% endif %}
-         {% if author %}
-         {% set avatar = author|replace(' ', '-')|lower %}
-         {% endif %}
-    {% if site.share.facebook or site.share.twitter %}
+ {% if site.share.facebook or site.share.twitter %}
     <script type="text/javascript">
     {% if site.share.twitter %}
     jQuery.getJSON('https://cdn.api.twitter.com/1/urls/count.json?url={{ page.url(true) }}/&callback=?', function (data) {
@@ -50,8 +52,9 @@
        {% endswitch %}
        </time>
 
-       {% if author %}
-       <a href="{{ page.url }}" class="author"><span class="name" rel="author">{{ author }}</span><img src="{{ theme_url }}/images/{{avatar}}.jpg" alt="{{ author }}" /></a>
+       {% if THEME_FUTURE_AUTHOR_STANDARDMODE %}
+        {% set avatar = author|replace(' ', '-')|lower %}
+        <a href="{{ page.url }}" class="author"><span class="name" rel="author">{{ author }}</span><img src="{{ theme_url }}/images/{{avatar}}.jpg" alt="{{ author }}" /></a>
        {% endif %}
      </div>
     </header>
@@ -81,7 +84,11 @@
 
    </div>
 
-    <footer>
+  <footer>
+    {% if not truncate and not THEME_FUTURE_AUTHOR_STANDARDMODE %}
+     {% include 'partials/author-bio.html.twig' ignore missing %}
+    {% endif %}
+    
     <ul class="actions">
     {% if truncate and page.summary != page.content %}
         <li><a href="{{ page.url }}" class="button">{{ "THEME_FUTURE.btn_continue_reading"|t|e }}</a></li>
