@@ -1,10 +1,10 @@
-{% if config.plugins.aura-authors.enabled %}
- {% set THEME_FUTURE_AUTHOR_STANDARDMODE = false %}
+{% if config.plugins['aura-authors'].enabled %}
+ {% set THEME_FUTURE_AUTHOR_DISPLAYMODE = 'aura-authors' %}
 {% elseif page.header.author %}
- {% set THEME_FUTURE_AUTHOR_STANDARDMODE = true %}
+ {% set THEME_FUTURE_AUTHOR_DISPLAYMODE = 'standard' %}
  {% set author = page.header.author %}
 {% else %}
- {% set THEME_FUTURE_AUTHOR_STANDARDMODE = true %}
+ {% set THEME_FUTURE_AUTHOR_DISPLAYMODE = 'standard' %}
  {% set author = page.header.taxonomy.author[0] %}
 {% endif %}
 
@@ -52,7 +52,7 @@
        {% endswitch %}
        </time>
 
-       {% if THEME_FUTURE_AUTHOR_STANDARDMODE %}
+       {% if THEME_FUTURE_AUTHOR_DISPLAYMODE == 'standard' %}
         {% set avatar = author|replace(' ', '-')|lower %}
         <a href="{{ page.url }}" class="author"><span class="name" rel="author">{{ author }}</span><img src="{{ theme_url }}/images/{{avatar}}.jpg" alt="{{ author }}" /></a>
        {% endif %}
@@ -85,7 +85,7 @@
    </div>
 
   <footer>
-    {% if not truncate and not THEME_FUTURE_AUTHOR_STANDARDMODE %}
+    {% if not truncate and THEME_FUTURE_AUTHOR_DISPLAYMODE == 'aura-authors' %}
      {% include 'partials/author-bio.html.twig' ignore missing %}
     {% endif %}
     
