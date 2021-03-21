@@ -1,12 +1,12 @@
-{% if config.plugins['aura-authors'].enabled %}
+{% if config.plugins['aura-authors'].enabled and page.header.aura.author %}
  {% set THEME_FUTURE_AUTHOR_DISPLAYMODE = 'aura-authors' %}
  {% set author = authors[page.header.aura.author] %}
 {% elseif page.header.author %}
  {% set THEME_FUTURE_AUTHOR_DISPLAYMODE = 'standard' %}
- {% set author = page.header.author %}
+ {% set author = { name: page.header.author } %}
 {% else %}
  {% set THEME_FUTURE_AUTHOR_DISPLAYMODE = 'standard' %}
- {% set author = page.header.taxonomy.author[0] %}
+ {% set author = { name: page.header.taxonomy.author|first } %}
 {% endif %}
 
 <article class="box post post-excerpt" itemprop="liveBlogUpdate" itemscope itemtype="http://schema.org/BlogPosting">
@@ -58,7 +58,7 @@
         <a href="#about-the-author" class="author">
        {% endif %}
        
-       <span class="name" rel="author">{{ author }}</span>
+       <span class="name" rel="author">{{ author.name }}</span>
        {# code-clean-up: <img src="{{ theme_url }}/images/{{avatar}}.jpg" alt="{{ author }}" /> #}
        {% if author.image %}
         {# original from: aura authors plugin #}
