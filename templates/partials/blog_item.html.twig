@@ -1,5 +1,6 @@
 {% if config.plugins['aura-authors'].enabled %}
  {% set THEME_FUTURE_AUTHOR_DISPLAYMODE = 'aura-authors' %}
+ {% set author = authors[page.header.aura.author] %}
 {% elseif page.header.author %}
  {% set THEME_FUTURE_AUTHOR_DISPLAYMODE = 'standard' %}
  {% set author = page.header.author %}
@@ -8,7 +9,7 @@
  {% set author = page.header.taxonomy.author[0] %}
 {% endif %}
 
-<article class="box post post-excerpt"  itemprop="liveBlogUpdate" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="box post post-excerpt" itemprop="liveBlogUpdate" itemscope itemtype="http://schema.org/BlogPosting">
  {% if site.share.facebook or site.share.twitter %}
     <script type="text/javascript">
     {% if site.share.twitter %}
@@ -52,10 +53,22 @@
        {% endswitch %}
        </time>
 
-       {% if THEME_FUTURE_AUTHOR_DISPLAYMODE == 'standard' %}
-        {% set avatar = author|replace(' ', '-')|lower %}
-        <a href="{{ page.url }}" class="author"><span class="name" rel="author">{{ author }}</span><img src="{{ theme_url }}/images/{{avatar}}.jpg" alt="{{ author }}" /></a>
+       {# set avatar = author|replace(' ', '-')|lower #}
+       {% if THEME_FUTURE_AUTHOR_DISPLAYMODE == 'aura-author' %}
+        <a href="#about-the-author" class="author">
        {% endif %}
+       
+       <span class="name" rel="author">{{ author }}</span>
+       {# code-clean-up: <img src="{{ theme_url }}/images/{{avatar}}.jpg" alt="{{ author }}" /> #}
+       {% if author.image %}
+        {# original from: aura authors plugin #}
+        {{ media['user://images/' ~ author.image|first.name].html('', author.name, 'author-image') }}
+       {% endif %}
+       
+       {% if THEME_FUTURE_AUTHOR_DISPLAYMODE == 'aura-author' %}
+        </a>
+       {% endif %}
+
      </div>
     </header>
 
