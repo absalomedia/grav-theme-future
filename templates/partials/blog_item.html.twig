@@ -62,7 +62,7 @@
        {# code-clean-up: <img src="{{ theme_url }}/images/{{avatar}}.jpg" alt="{{ author }}" /> #}
        {% if author.image %}
         {# original from: aura authors plugin #}
-        {{ media['user://images/' ~ author.image|first.name].html('', author.name, 'author-image') }}
+        {{ media['user://images/' ~ author.image|first.name].html('', author.name, 'author-image')|raw }}
        {% endif %}
        
        {% if THEME_FUTURE_AUTHOR_DISPLAYMODE == 'aura-author' %}
