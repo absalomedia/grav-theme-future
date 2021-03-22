@@ -1,0 +1,78 @@
+{# blog-child-item.html.twig: summary of a blog item #}
+
+{% if config.plugins['aura-authors'].enabled and page.header.aura.author %}
+ {% set THEME_FUTURE_AUTHOR_DISPLAYMODE = 'aura-authors' %}
+ {% set author = authors[page.header.aura.author] %}
+{% elseif page.header.author %}
+ {% set THEME_FUTURE_AUTHOR_DISPLAYMODE = 'standard' %}
+ {% set author = { name: page.header.author } %}
+{% else %}
+ {% set THEME_FUTURE_AUTHOR_DISPLAYMODE = 'standard' %}
+ {% set author = { name: page.header.taxonomy.author|first } %}
+{% endif %}
+
+<article class="post" itemprop="liveBlogUpdate" itemscope itemtype="http://schema.org/BlogPosting"><!-- BACKUP: class="box post-excerpt" -->
+  {% if site.share.facebook or site.share.twitter %}
+    <script type="text/javascript">
+    {% if site.share.twitter %}
+    jQuery.getJSON('https://cdn.api.twitter.com/1/urls/count.json?url={{ page.url(true) }}/&callback=?', function (data) {
+        jQuery('#so-url-shares{{ loop.index }}').text(data.count);
+    });
+    {% endif %}
+    {% if site.share.facebook %}
+    jQuery.getJSON('http://graph.facebook.com/?id={{ page.url(true) }}', function (data) {
+        jQuery('#so-fburl-shares{{ loop.index }}').text(data.shares);
+    });
+    {% endif %}
+    </script>
+  {% endif %}
+<header>
+  <div class="title">
+   <h2 itemprop="headline"><a href="{{ page.url }}">{{ page.title }}</a></h2>
+  
+  {% if page.header.description %}
+    <p itemprop="alternativeHeadline">{{ page.header.description }}</p>
+  {% endif %}
+  </div>
+  <div class="meta">
+	{% include 'partials/blog/date.html.twig' %}
+
+    <div class="author"><span class="name" rel="author">{{ author.name }}</span>
+    {% if author.image %}
+      {{ media['user://images/' ~ author.image|first.name].html('', author.name, 'author-image')|raw }}
+    {% endif %}
+    </div>
+
+  </div>
+</header>
+
+<a href="{{ page.url }}" class="image featured">{{ page.media.images|first.cropZoom(1038,437).html(page.title, page.title, '')|raw }}</a>
+  
+<div itemprop="articleBody">
+{% if page.summary != page.content %}
+  {{ page.summary|raw }}
+{% else %}
+  {{ page.content|truncate(550)|raw }}
+{% endif %}
+</div>
+
+<footer>
+  
+  <ul class="actions">
+    <li><a href="{{ page.url }}" class="button">{{ "THEME_FUTURE.btn_continue_reading"|t|e }}</a></li>
+  </ul>
+    
+  <ul class="stats">
+   {% if page.taxonomy.tag %}
+     {% for tag in page.taxonomy.tag %}
+     <li><a href="{{ base_url }}/tag{{ config.system.param_sep }}{{ tag }}" itemprop="keywords">{{ tag }}</a></li>
+     {% endfor %}
+   {% endif %}
+    
+    <li><a href="https://twitter.com/share" data-url="{{ page.url(true) }}" data-text="{{ page.title }}" class="icon fa-heart"><span id="so-url-shares{{ loop.index }}"><i class="fa fa-circle-o-notch fa-spin"></i></span></a></li>
+    <li><a href="http://www.facebook.com/sharer.php?u={{ page.url(true) }}" class="icon fa-comment"><span id="so-fburl-shares{{ loop.index }}">0</span></a></li>
+  </ul>
+
+</footer>
+
+</article>

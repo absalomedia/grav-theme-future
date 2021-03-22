@@ -18,7 +18,7 @@
     {% endif %}
 
     {% for child in collection %}
-      {% include 'partials/blog_item.html.twig' with {'page':child, 'truncate':true} %}
+      {% include 'partials/blog-child-item.html.twig' with {'page':child} %}
     {% endfor %}
 
     {% if config.plugins.pagination.enabled and collection.params.pagination %}
