@@ -5,10 +5,10 @@
  {% set author = authors[page.header.aura.author] %}
 {% elseif page.header.author %}
  {% set THEME_FUTURE_AUTHOR_DISPLAYMODE = 'standard' %}
- {% set author = { name: page.header.author } %}
+ {% set author = { name: (page.header.author) } %}
 {% else %}
  {% set THEME_FUTURE_AUTHOR_DISPLAYMODE = 'standard' %}
- {% set author = { name: page.header.taxonomy.author|first } %}
+ {% set author = { name: (page.header.taxonomy.author|first) } %}
 {% endif %}
 
 <article class="post" itemprop="liveBlogUpdate" itemscope itemtype="http://schema.org/BlogPosting"><!-- BACKUP: class="box post-excerpt" -->
