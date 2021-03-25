@@ -64,9 +64,12 @@
 
 <footer>
  {% if THEME_FUTURE_AUTHOR_DISPLAYMODE == 'aura-authors' %}
+ <div class="blog-item-author"
    {% include 'partials/author-bio.html.twig' ignore missing %}
+ </div>  
  {% endif %}
-   
+
+ <div class="blog-item-utils">
   <ul class="actions">
     {% if not page.isFirst %}
       <li><a class="button" href="{{ page.nextSibling.url }}"><i class="fa fa-chevron-left"></i> {{ "THEME_FUTURE.btn_item_next"|t|e }}</a></li>
@@ -86,6 +89,15 @@
     <li><a href="https://twitter.com/share" data-url="{{ page.url(true) }}" data-text="{{ page.title }}" class="icon fa-heart"><span id="so-url-shares{{ loop.index }}"><i class="fa fa-circle-o-notch fa-spin"></i></span></a></li>
     <li><a href="http://www.facebook.com/sharer.php?u={{ page.url(true) }}" class="icon fa-comment"><span id="so-fburl-shares{{ loop.index }}">0</span></a></li>
   </ul>
+  
+  </div>
+  
+  {% if config.plugins.comments.enabled %}
+  <div class="blog-item-comments">
+   {# Plugin "Comments" Integration: based on https://github.com/getgrav/grav-plugin-comments #}
+   {% include 'partials/comments.html.twig' with {'page': page} %}
+  </div>
+  {% endif %}
 </footer>
 
 </article>
