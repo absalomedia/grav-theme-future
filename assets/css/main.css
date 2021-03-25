@@ -2660,6 +2660,10 @@
 			width: calc(100% + 6em);
 		}
 
+		.post > footer .blog-item-author {
+			padding: 0 3em 3.3em 3em;
+		}
+		
 		.post > footer .blog-item-comments {
 			border-top: solid 1px rgba(160, 160, 160, 0.3);
 			padding: 3.3em 3em 0 3em;
@@ -2799,6 +2803,10 @@
 								width: 3.5em;
 							}
 
+				.post > footer .blog-item-author {
+					padding: 0 3em 1.25em 3em;
+				}
+
 				.post > footer .blog-item-comments {
 					padding: 1.25em 3em 0 3em;
 				}
@@ -2835,6 +2843,10 @@
 					width: calc(100% + 3em);
 				}
 				
+				.post > footer .blog-item-author {
+					padding: 0 1.5em 0.5em 1.5em;
+				}
+				
 				.post > footer .blog-item-comments {
 					padding: 0.5em 1.5em 0 1.5em;
 				}
@@ -2848,7 +2860,7 @@
 					-webkit-flex-direction: column-reverse;
 					-ms-flex-direction: column-reverse;
 					flex-direction: column-reverse;
-					padding: 0.5em 1.5em 0 1.5em;
+					padding: 0em 1.5em 0 1.5em;
 				}
 		}
 
