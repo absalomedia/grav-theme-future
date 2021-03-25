@@ -2656,7 +2656,6 @@
 
 		.post > footer {
 			left: -3em;
-			margin: -3em 0 3em 0;
 			position: relative;
 			width: calc(100% + 6em);
 		}
@@ -2833,7 +2832,6 @@
 			
 				.post > footer {
 					left: -1.5em;
-					margin: -1.5em 0 1.5em 0;
 					width: calc(100% + 3em);
 				}
 				
