@@ -36,7 +36,7 @@
   <div class="meta">
 	{% include 'partials/blog/date.html.twig' %}
     
-    {% if THEME_FUTURE_AUTHOR_DISPLAYMODE == 'aura-author' %}
+    {% if THEME_FUTURE_AUTHOR_DISPLAYMODE == 'aura-authors' %}
       <a href="#about-the-author" class="author">
 	{% else %}
 	  <div class="author">
@@ -46,7 +46,7 @@
           {{ media['user://images/' ~ author.image|first.name].html('', author.name, 'author-image')|raw }}
         {% endif %}
     
-	{% if THEME_FUTURE_AUTHOR_DISPLAYMODE == 'aura-author' %}
+	{% if THEME_FUTURE_AUTHOR_DISPLAYMODE == 'aura-authors' %}
       </a>
     {% else %}
 	  </div>
@@ -64,7 +64,7 @@
 
 <footer>
  {% if THEME_FUTURE_AUTHOR_DISPLAYMODE == 'aura-authors' %}
- <div class="blog-item-author">
+ <div class="blog-item-author" id="about-the-author">
    {% include 'partials/author-bio.html.twig' ignore missing %}
  </div>
  {% endif %}
