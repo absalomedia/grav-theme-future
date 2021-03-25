@@ -57,7 +57,7 @@
 </div>
 
 <footer>
-  
+  <div class="blog-item-utils">
   <ul class="actions">
     <li><a href="{{ page.url }}" class="button">{{ "THEME_FUTURE.btn_continue_reading"|t|e }}</a></li>
   </ul>
@@ -72,7 +72,7 @@
     <li><a href="https://twitter.com/share" data-url="{{ page.url(true) }}" data-text="{{ page.title }}" class="icon fa-heart"><span id="so-url-shares{{ loop.index }}"><i class="fa fa-circle-o-notch fa-spin"></i></span></a></li>
     <li><a href="http://www.facebook.com/sharer.php?u={{ page.url(true) }}" class="icon fa-comment"><span id="so-fburl-shares{{ loop.index }}">0</span></a></li>
   </ul>
-
+  </div>
 </footer>
 
 </article>
