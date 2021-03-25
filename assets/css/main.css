@@ -2662,7 +2662,8 @@
 		}
 
 		.post > footer .blog-item-comments {
-				border-top: solid 1px rgba(160, 160, 160, 0.3);
+			border-top: solid 1px rgba(160, 160, 160, 0.3);
+			padding: 3.3em 3em 0 3em;
 		}
 		
 		.post > footer .blog-item-utils {
@@ -2674,6 +2675,7 @@
 			-webkit-align-items: center;
 			-ms-align-items: center;
 			align-items: center;
+			padding: 0 3em 0 3em;
 		}
 		
 			.post > footer .actions {
@@ -2798,8 +2800,12 @@
 								width: 3.5em;
 							}
 
-				.post > footer {
-					padding: 3.75em 3em 1.25em 3em ;
+				.post > footer .blog-item-comments {
+					padding: 1.25em 3em 0 3em;
+				}
+		
+				.post > footer .blog-item-utils {
+					padding: 0 3em 0 3em;
 				}
 
 		}
@@ -2826,22 +2832,26 @@
 					
 			
 				.post > footer {
-					padding: 3em 1.5em 0.5em 1.5em ;
 					left: -1.5em;
 					margin: -1.5em 0 1.5em 0;
 					width: calc(100% + 3em);
 				}
+				
+				.post > footer .blog-item-comments {
+					padding: 0.5em 1.5em 0 1.5em;
+				}
 		
-			.post > footer .blog-item-utils {
-				-moz-align-items: stretch;
-				-webkit-align-items: stretch;
-				-ms-align-items: stretch;
-				align-items: stretch;
-				-moz-flex-direction: column-reverse;
-				-webkit-flex-direction: column-reverse;
-				-ms-flex-direction: column-reverse;
-				flex-direction: column-reverse;
-			}
+				.post > footer .blog-item-utils {
+					-moz-align-items: stretch;
+					-webkit-align-items: stretch;
+					-ms-align-items: stretch;
+					align-items: stretch;
+					-moz-flex-direction: column-reverse;
+					-webkit-flex-direction: column-reverse;
+					-ms-flex-direction: column-reverse;
+					flex-direction: column-reverse;
+					padding: 0.5em 1.5em 0 1.5em;
+				}
 		}
 
 		@media screen and (max-width: 480px) {
