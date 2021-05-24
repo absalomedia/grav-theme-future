@@ -1,0 +1,18 @@
+en:
+  THEME_FUTURE:
+    btn_continue_reading: Continue Reading
+    btn_item_previous: Previous Post
+    btn_item_next: Next Post
+    month_short: [Jan., Feb., Mar., Apr., May, June, July, Aug., Sept., Oct., Nov., Dec.]
+de:
+  THEME_FUTURE:
+    btn_continue_reading: Weiterlesen
+    btn_item_previous: Vorheriger Artikel
+    btn_item_next: Nächster Artikel
+    month_short: [Jan., Feb., März, April, Mai, Juni, Juli, Aug., Sept., Okt., Nov., Dez.]
+fr:
+  THEME_FUTURE:
+    btn_continue_reading: continuer la lecture
+    btn_item_previous: article précédent
+    btn_item_next: article suivant
+    month_short: [janv., févr., mars, avr., mai, juin, juil., août, sept., oct., nov., déc.]

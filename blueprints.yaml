@@ -24,7 +24,15 @@ form:
           0: Disabled
         validate:
           type: bool
-
+    
+    site_subtitle:
+        type: text
+        size: large
+        label: 'Site Subtitle'
+        default: ''
+        validate:
+          type: text
+    
     color:
         type: text
         size: medium

@@ -1,53 +1,44 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 <!DOCTYPE html>
-<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="{{ grav.language.getActive ?: theme_config.default_lang }}">"> <![endif]-->
-<!--[if IE 8 ]><html class="no-js ie ie8" lang="{{ grav.language.getActive ?: theme_config.default_lang }}">> <![endif]-->
-<!--[if IE 9 ]><html class="no-js ie ie9" lang="{{ grav.language.getActive ?: theme_config.default_lang }}">> <![endif]-->
-<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="{{ grav.language.getActive ?: theme_config.default_lang }}"> <!--<![endif]-->
+<html class="no-js" lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
 <head>
-    {% block head %}
-        <meta charset="utf-8" />
-        <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
-        {% include 'partials/metadata.html.twig' %}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
-        <link rel="canonical" href="{{ page.url(true, true) }}" />
+{% block head %}
+  <meta charset="utf-8" />
+  <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
+  {% include 'partials/metadata.html.twig' %}
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
+  <link rel="canonical" href="{{ page.url(true, true) }}" />
 
-        {% block stylesheets %}
-            {% do assets.addCss('theme://assets/css/main.css') %}
-        {% endblock %}
-        {{ assets.css() }}
+  {% block stylesheets %}
+    {% do assets.addCss('theme://assets/css/main.css') %}
+  {% endblock %}
 
-        {% block javascripts %}
-            {% do assets.add('jquery',101) %}
-            {% do assets.addJs('theme://assets/js/skel.min.js') %}
-            {% do assets.addJs('theme://assets/js/util.js') %}
-            {% do assets.addJs('theme://assets/js/main.js') %}
-        {% endblock %}
-        {{ assets.js() }}
+  {% block javascripts %}
+    {% do assets.add('jquery',101) %}
+    {% do assets.addJs('theme://assets/js/skel.min.js') %}
+    {% do assets.addJs('theme://assets/js/util.js') %}
+    {% do assets.addJs('theme://assets/js/main.js') %}
+  {% endblock %}
 
-        <!--[if lte IE 8]><script src="{{ url('theme://assets/js/ie/html5shiv.js') }}"></script><![endif]-->
+  {% block assets deferred %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+  {% endblock %}
 
-        {% if site.calendar %}
-           <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-       {% endif %}
+  {% if site.calendar %}
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $( "#datepicker" ).datepicker({
+        hideIfNoPrevNext: true
+      });
+    });
+  </script>
+  {% endif %}
 
-       <!--[if lte IE 8]><script src="{{ url('theme://assets/js/ie/respond.min.js') }}"></script><![endif]-->
-       <!--[if lte IE 8]><script src="{{ url('theme://assets/css/ie8.css') }}"></script><![endif]-->
-
-       {% if site.calendar %}
-        <script type="text/javascript">
-        $(function() {
-            $( "#datepicker" ).datepicker({
-                hideIfNoPrevNext: true
-            });
-        });
-        </script>
-    {% endif %}
-
-    {% endblock head%}
+{% endblock head%}
 </head>
-
 <body>
     <div id="wrapper">
 			{% block header %}
@@ -125,8 +116,8 @@ $(document).ready(function($){
 </script>
 {% endif %}
 
-    {% block bottom %}
-        {{ assets.js('bottom') }}
-    {% endblock %}
+{% block bottom %}
+  {{ assets.js('bottom')|raw }}
+{% endblock %}
 </body>
 </html>

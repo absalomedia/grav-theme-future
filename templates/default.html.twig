@@ -9,12 +9,13 @@
     <time class="published" datetime="{{page.date|date("Y-m-d")}}">{{ page.date|date("M j, Y")}}</time>                              
     </div>
     </header>
+    {% if big_header %}
+      {{ page.media.images|first.cropResize(1038,437).html(page.title, page.title, 'image featured') }}
+    {% else %}
+      {{ page.media.images|first.cropZoom(1038,437).html(page.title, page.title, 'image featured') }}
+    {% endif %}
+    
+    {{ page.content|raw }}
 
-        {% if big_header %}
-            {{ page.media.images|first.cropResize(1038,437).html(page.title, page.title, 'image featured') }}
-        {% else %}
-            {{ page.media.images|first.cropZoom(1038,437).html(page.title, page.title, 'image featured') }}
-        {% endif %}
-   {{ page.content}}
 </article>
 {% endblock %}
