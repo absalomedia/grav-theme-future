@@ -1,6 +1,6 @@
 ///
 /// Future Imperfect by HTML5 UP
-/// html5up.net | @n33co
+/// html5up.net | @ajlkn
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
@@ -15,6 +15,7 @@
 		@include vendor('justify-content', 'space-between');
 		background-color: _palette(bg);
 		border-bottom: solid 1px _palette(border);
+		box-shadow: 0 5px 6px -6px _palette(bg-dropdown);
 		height: 3.5em;
 		left: 0;
 		line-height: 3.5em;
@@ -50,39 +51,39 @@
 			}
 		}
 
-		.links {
-			@include vendor('flex', '1');
-			border-left: solid 1px _palette(border);
-			height: inherit;
-			line-height: inherit;
-			margin-left: 1.5em;
-			overflow: hidden;
-			padding-left: 1.5em;
+		// .links {
+		// 	@include vendor('flex', '1');
+		// 	border-left: solid 1px _palette(border);
+		// 	height: inherit;
+		// 	line-height: inherit;
+		// 	margin-left: 1.5em;
+		// 	overflow: hidden;
+		// 	padding-left: 1.5em;
 
-			ul {
-				li {
-					border-left: solid 1px _palette(border);
-					line-height: 1;
-					margin-left: 1em;
-					padding-left: 1em;
+		// 	ul {
+		// 		li {
+		// 			border-left: solid 1px _palette(border);
+		// 			line-height: 1;
+		// 			margin-left: 1em;
+		// 			padding-left: 1em;
 
-					&:first-child {
-						border-left: 0;
-						margin-left: 0;
-						padding-left: 0;
-					}
+		// 			&:first-child {
+		// 				border-left: 0;
+		// 				margin-left: 0;
+		// 				padding-left: 0;
+		// 			}
 
-					a {
-						border-bottom: 0;
-						font-family: _font(family-heading);
-						font-size: 0.7em;
-						font-weight: _font(weight-heading);
-						letter-spacing: _font(kerning-heading);
-						text-transform: uppercase;
-					}
-				}
-			}
-		}
+		// 			a {
+		// 				border-bottom: 0;
+		// 				font-family: _font(family-heading);
+		// 				font-size: 0.7em;
+		// 				font-weight: _font(weight-heading);
+		// 				letter-spacing: _font(kerning-heading);
+		// 				text-transform: uppercase;
+		// 			}
+		// 		}
+		// 	}
+		// }
 
 		.main {
 			height: inherit;
@@ -105,7 +106,7 @@
 					}
 
 					> a {
-						@include icon;
+						@include icon(false, solid);
 						border-bottom: 0;
 						color: _palette(fg-light);
 						overflow: hidden;
@@ -160,13 +161,13 @@
 			}
 		}
 
-		@include breakpoint(medium) {
+		@include breakpoint('<=medium') {
 			.links {
 				display: none;
 			}
 		}
 
-		@include breakpoint(small) {
+		@include breakpoint('<=small') {
 			height: 2.75em;
 			line-height: 2.75em;
 
