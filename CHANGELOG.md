@@ -1,3 +1,19 @@
+# v1.0.9
+## 05/12/2021
+
+* Drop down menu functionality
+* Added slidedown functionality for sidebar menu with JQuery
+* Fixed autoescaping in all twig templates
+* Full translation English and Spanish for administration and frontend
+* Some minus fixes in SCSS, CSS and twig templates
+* Added Back-to-Top button
+* Added Offline template
+* Added option to choose the number of miniposts will be showed in sidebar (in Theme options)
+* Added the order option in the blog item to order the miniposts as you want
+* FontAwesome downgrade to 4.7 version (for better compatibility with some plugins)
+* Add shadown to header
+* Added avatarImage and subtitle options in blueprints
+
 # v1.0.8
 ## 02/27/2020
  
