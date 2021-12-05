@@ -1,6 +1,6 @@
 ///
 /// Future Imperfect by HTML5 UP
-/// html5up.net | @n33co
+/// html5up.net | @ajlkn
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
@@ -60,7 +60,7 @@
 	.mini-posts {
 		margin: 0 0 _size(element-margin) 0;
 
-		@include breakpoint(large) {
+		@include breakpoint('<=large') {
 			@include vendor('display', 'flex');
 			@include vendor('flex-wrap', 'wrap');
 			width: calc(100% + #{_size(element-margin)});
@@ -75,7 +75,7 @@
 			}
 		}
 
-		@include breakpoint(xsmall) {
+		@include breakpoint('<=xsmall') {
 			display: block;
 			width: 100%;
 
