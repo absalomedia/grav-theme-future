@@ -29,16 +29,16 @@ Redesigned from scratch (version 2021)
 * Blueprints for Footer, Slogan and Social icons.
 
 # Supported Page Templates
-- Default view template
-- Error view template
-- Blog view template
-- Blog item view template
-- Single view template
-- Form view template
-- Modular view templates:
-    - Features Modular view template
-    - Banner Modular view template
-    - Contact Modular view template
+- Default template
+- Error template
+- Blog template
+- Blog item template
+- Portfolio template
+- Form template
+- Modular templates:
+    - Features Modular template
+    - Banner Modular template
+    - Contact Modular template
 
 # Installation
 
