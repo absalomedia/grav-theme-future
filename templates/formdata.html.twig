@@ -10,7 +10,7 @@
    </header>
   <p> is the summary of what you wrote to us:</p>
 
-  {{ content }}
+  {{ content|raw }}
 
   {% include "forms/data.html.twig" %}
 </article>
