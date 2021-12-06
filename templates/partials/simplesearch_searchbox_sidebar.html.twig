@@ -1,9 +1,7 @@
 {% set min_chars = config.get('plugins.simplesearch.min_query_length', 3) %}
 
-<li class="search">
-    <a class="fa-search" href="#search">{{"PLUGIN_SIMPLESEARCH.SEARCH_PLACEHOLDER"|t}}</a>
-    <form id="search" data-simplesearch-form>
-        <input
+<form class="search" data-simplesearch-form>
+    <input
             name="searchfield"
             class="search-input"
             aria-label="search"
@@ -21,5 +19,4 @@
                 <img src="{{ url('plugin://simplesearch/assets/search.svg') }}" />
             </button>
         {% endif %}
-    </form>
-</li>
+</form>

@@ -1,5 +1,3 @@
-<ul class="header-social">
-    {% for item in site.social %}
-        <li><a href="{{ item.url }}"><i class="fa fa-{{ item.icon }}"></i></a></li>
-    {% endfor %}
-</ul>
+{% for item in theme_config.social %}
+    <li><a href="{{ item.url }}" class="icon brands {{item.icon}}"><span class="label">{{item.name}}</span></a></li>
+{% endfor %}

@@ -1,13 +1,12 @@
-{% set taxlist = taxonomylist.get() %}
+{% set taxlist = children_only is defined ? taxonomylist.getChildPagesTags() : taxonomylist.get() %}
 
 {% if taxlist %}
-<ul>
-  <li>
-    {% for tax,value in taxlist[taxonomy] %}
-
-        <a href="{{ base_url }}/tag{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax }}</a>
-
-    {% endfor %}
+  <ul class="menulink">
+    <li>
+        {% for tax,value in taxlist[taxonomy]|sort %}
+            {% set active = uri.param(taxonomy) == tax? 'active' : '' %}
+            <a class="tags {{ active }}" href="{{ base_url }}/{{ taxonomy }}{{ config.system.param_sep }}{{ tax }}">{{ tax }}</a>
+        {% endfor %}
     </li>
-<ul>
+  </ul>
 {% endif %}
