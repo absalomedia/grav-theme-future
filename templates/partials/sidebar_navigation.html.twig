@@ -14,7 +14,7 @@
 						{{ _self.loop(p) }}
 					</ul>
 					{% elseif p.routable != false and p.children.count > 0 %}
-					<a>
+					<a href="{{ p.url }}">
 						{% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
 						<span>{{ p.menu }}</span>
 					</a>
