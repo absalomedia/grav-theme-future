@@ -10,23 +10,20 @@
       {% set feed_url = base_url~'/'~page.parent.slug %}
   {% endif  %}
    
+  {% block menu %}
+    {% include 'partials/sidebar_right.html.twig' %}
+  {% endblock %}
+
 	{% block content %}
-
-    {% if site.calendar %}
-        <script type="text/javascript">
-         $(function() {
-            $( "#datepicker" ).datepicker( "setDate", "{{ page.date|date("m") }}/{{ page.date|date("d") }}/{{ page.date|date("Y") }}" );
-        });
-        </script>
-        {% endif %}
-
-
-
-      {% if config.plugins.breadcrumbs.enabled %}
+    {% if config.plugins.breadcrumbs.enabled %}
         {% include 'partials/breadcrumbs.html.twig' %}
-        {% endif %}
-		
-			 {% include 'partials/blog_item.html.twig' with {'truncate':false,'big_header':true} %}
+    {% endif %}
+
+	   {% include 'partials/blog_item.html.twig' with {'truncate':false,'big_header':true} %}
+
+     <section id="footer" class="align-center">
+        {% include 'partials/footer.html.twig' %}
+    </section>
 	{% endblock %}
 
 {% endembed %}

@@ -1,9 +1,16 @@
 {% extends 'partials/base.html.twig' %}
+
+{% block menu %}
+  {% include 'partials/sidebar_right.html.twig' %}
+{% endblock %}
+
 {% block content %}
-  <article class="box post post-excerpt">
+<article class="post">
     <header>
-      <h2>Error {{ page.header.http_response_code }}</h2>
+        <div class="title"> 
+            <h2><span class="icon fa-exclamation-triangle"></span> Error {{ page.header.http_response_code }}</h2>
+            <p>{{ page.content|raw }}</p>
+        </div>
     </header>
-    {{ page.content }}
-  </article>
+</article>
 {% endblock %}
