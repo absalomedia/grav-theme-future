@@ -1,6 +1,6 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 {% set compress = theme_var('production-mode') ? '.min.css' : '.css' %}
-{% set favicon = theme_config.favicon ? theme_config.favicon|first : { type:'image/png', path: url('theme://images/logo.png') } %}
+{% set favicon = theme_config.favicon ? theme_config.favicon|first : { type:'image/png', path: url('theme://images/favicon.png') } %}
 {% set customlogo = theme_config.custom_logo ? theme_config.custom_logo|first : {type:'image/png', path: url('theme://images/logo.png') } %}
 {% set new_base_url = base_url_absolute ~ theme_config.blog_page %}
 
