@@ -43,6 +43,7 @@ form:
     favicon:
       type: file
       label: FUTURE.ADMIN.THEME.FAVICON
+      description: FUTURE.ADMIN.THEME.CUSTOM_FAVICON_DESCRIPTION
       destination: 'theme@:/images'
       multiple: false
       avoid_overwriting: false
