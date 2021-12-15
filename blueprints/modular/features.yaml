@@ -5,36 +5,42 @@ form:
   fields:
     tabs:
       fields:
-        advanced:
-          fields:
-            columns:
-              fields:
-                column1:
-                  fields:
-                    name:
-                      default: modular/features
-                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
-            overrides:
-              fields:
-                header.template:
-                  default: modular/features
-                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
         features:
           type: tab
-          title: Features
+          title: FUTURE.ADMIN.MODULAR.FEATURES.FEATURES_TAB
           fields:
+            header.class:
+              type: select
+              label: FUTURE.ADMIN.MODULAR.FEATURES.FEATURES_LAYOUT
+              default: standard
+              size: medium
+              options:
+                medium: FUTURE.ADMIN.MODULAR.FEATURES.FEATURES_LAYOUT_TWOCOLS
+                standard: FUTURE.ADMIN.MODULAR.FEATURES.FEATURES_LAYOUT_THREECOLS
             header.features:
               name: features
               type: list
-              label: Features
-
+              label: FUTURE.ADMIN.MODULAR.FEATURES.FEATURES_HEADER
               fields:
-                .icon:
+                .image:
+                  type: pagemediaselect
+                  label: FUTURE.ADMIN.MODULAR.FEATURES.FEATURES_IMAGE
+                  preview_images: true
+                .title:
                   type: text
-                  label: Icon
-                .header:
-                  type: text
-                  label: Header
+                  label: FUTURE.ADMIN.MODULAR.FEATURES.FEATURES_TITLE
                 .text:
+                  type: textarea
+                  autofocus: true
+                  label: FUTURE.ADMIN.MODULAR.FEATURES.FEATURES_TEXT
+                  maxlength: 500
+                  rows: 5
+                .buttontext:
                   type: text
-                  label: Text
+                  label: FUTURE.ADMIN.MODULAR.FEATURES.FEATURES_BUTTON_TEXT
+                .buttonurl:
+                  type: text
+                  label: FUTURE.ADMIN.MODULAR.FEATURES.FEATURES_BUTTON_URL
+                .buttonurl_target:
+                  type: checkbox
+                  label: FUTURE.ADMIN.MODULAR.FEATURES.FEATURES_BUTTON_URL_TARGET

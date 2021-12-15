@@ -12,6 +12,10 @@
     {% set feed_url = base_url~'/'~page.slug %}
   {% endif  %}
 
+  {% block menu %}
+    {% include 'partials/sidebar_right.html.twig' %}
+  {% endblock %}
+  
   {% block content %}
     {% if config.plugins.breadcrumbs.enabled %}
       {% include 'partials/breadcrumbs.html.twig' %}
@@ -26,6 +30,10 @@
     {% endif %}
   {% endblock %}
 
+  {% block sidebar %}
+    {% include 'partials/sidebar_left.html.twig' %}
+  {% endblock %}
+  
 {% endembed %}
 
 

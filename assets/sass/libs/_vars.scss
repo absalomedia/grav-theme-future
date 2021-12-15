@@ -24,22 +24,28 @@
 		family-fixed:				('Courier New', monospace),
 		family-heading:				('Raleway', Helvetica, sans-serif),
 		weight:						400,
+		weight-medium:				600,
 		weight-bold:				700,
 		weight-heading:				400,
 		weight-heading-bold:		800,
 		weight-heading-extrabold:	900,
-		kerning-heading:			0.25em
+		kerning-heading:			0.25em,
+		no-kerning:					0em
 	);
 
 // Palette.
-	$palette: (
+$palette: (
 		bg:							#ffffff,
 		bg-alt:						#f4f4f4,
-		fg:							#646464,
+		bg-dropdown:				#333333,
+		bg-header:					#rgb(45,45,45, 0.8),
+		fg:							#2e2e2e,
 		fg-bold:					#3c3b3b,
-		fg-light:					#aaaaaa,
+		fg-light:					#838383,
 		border:						rgba(160,160,160,0.3),
 		border-bg:					rgba(160,160,160,0.075),
 		border-alt:					rgba(160,160,160,0.65),
-		accent:						#2ebaae
+		border-dropdown:			rgba(0, 0, 0, 0.15),
+		accent:						#ba2e5d,
+		icon:						rgba(43, 43, 43, 0.785),
 	);

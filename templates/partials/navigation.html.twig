@@ -1,19 +1,6 @@
-<nav class="links" role="navigation">
-    <ul>
-    {% for page in pages.children %}
-        {% if page.visible %}
-            {% set current_page = (page.active or page.activeChild) ? 'current' : '' %}
-                <li class="{{ current_page }}">
-                    <a href="{{ page.url }}">
-                        {{ page.menu }}
-                    </a>
-                </li>
-            {% endif %}
-        {% endfor %}
-        {% for mitem in site.menu %}
-            <li>
-                <a href="{{ mitem.link }}">{{ mitem.text }}</a>
-            </li>
-        {% endfor %}
-    </ul>
-</nav>          
+{% import 'macros/topmenu.html.twig' as macros %}
+
+<ul>
+    {{ macros.nav_loop(pages) }}
+</ul>
+

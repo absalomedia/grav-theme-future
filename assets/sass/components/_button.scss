@@ -1,6 +1,6 @@
 ///
 /// Future Imperfect by HTML5 UP
-/// html5up.net | @n33co
+/// html5up.net | @ajlkn
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
@@ -60,12 +60,10 @@
 		}
 
 		&.fit {
-			display: block;
-			margin: 0 0 (_size(element-margin) * 0.5) 0;
 			width: 100%;
 		}
 
-		&.big {
+		&.large {
 			font-size: 0.7em;
 			padding: 0 3em;
 		}

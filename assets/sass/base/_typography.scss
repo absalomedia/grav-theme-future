@@ -1,6 +1,6 @@
 ///
 /// Future Imperfect by HTML5 UP
-/// html5up.net | @n33co
+/// html5up.net | @ajlkn
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
@@ -13,23 +13,23 @@
 		font-weight: _font(weight);
 		line-height: 1.75;
 
-		@include breakpoint(xlarge) {
+		@include breakpoint('<=xlarge') {
 			font-size: 12pt;
 		}
 
-		@include breakpoint(large) {
+		@include breakpoint('<=large') {
 			font-size: 12pt;
 		}
 
-		@include breakpoint(medium) {
+		@include breakpoint('<=medium') {
 			font-size: 12pt;
 		}
 
-		@include breakpoint(small) {
+		@include breakpoint('<=small') {
 			font-size: 12pt;
 		}
 
-		@include breakpoint(xsmall) {
+		@include breakpoint('<=xsmall') {
 			font-size: 12pt;
 		}
 	}
